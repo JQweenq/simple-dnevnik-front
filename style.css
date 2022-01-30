@@ -1,0 +1,29 @@
+:root {
+	--sidebar-width: 250px;
+	--sidebar-close: 88px;
+	--tran-02: all 0.2s ease;
+	--tran-03: all 0.3s ease;
+	--tran-04: all 0.3s ease;
+	--tran-05: all 0.3s ease;
+	--body-color: #110022;
+	--sidebar-color: #291A38;
+	--text-color: #ccc;
+	--primary-color: #EB4C42;
+	--primary-light-color: #241;
+	--router-color: transparent;
+	--router-hover-color: linear-gradient(45deg, rgba(175, 38, 113, 1) 0%, rgba(0, 0, 0, 0) 100%);
+	--router-color-close: #992885;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: var(--body-color);
+	color: var(--text-color);
+	transition: var(--tran-05);
+}
+section{
+	width: 100%;
+}
