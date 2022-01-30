@@ -1,19 +1,19 @@
 <template>
-  <div class="sidebar close">
-    <div class="item header">
+  <aside class="close">
+    <header>
       <h1>{{ title }}</h1>
-      <i class="toggle" @click="toggle"></i>
-    </div>
-    <hr class="separator" />
+      <b @click="toggle"></b>
+    </header>
+    <hr />
     <Collection />
-    <hr class="separator" />
-    <div class="footer item">
-      <a href="#" class="item router">
+    <hr />
+    <footer>
+      <a href="#" class="item">
         <i :class="`bx ${icon} icon`"></i>
         <span class="text">{{ log }}</span>
       </a>
-    </div>
-  </div>
+    </footer>
+  </aside>
 </template>
 
 <script lang="ts">
@@ -26,8 +26,7 @@ export default {
   }),
   methods: {
     toggle() {
-      const sidebar = document.querySelector(".sidebar");
-      sidebar?.classList.toggle("close");
+      document.querySelector("aside")?.classList.toggle("close");
     },
   },
   components: {
@@ -37,7 +36,7 @@ export default {
 </script>
 
 <style>
-.sidebar{
+aside{
 	background: var(--sidebar-color);
 	width: 100%;
 	height: 50px;
@@ -48,26 +47,19 @@ export default {
 	z-index: 100;
 	transition: var(--tran-05);
 }
-.sidebar .item{
-	width: 50px;
-	height: 50px;
-	display: flex;
-	align-items: center;
-	border-radius: 10px;
-}
-
-.sidebar .header,
-.sidebar .footer{
+aside header,
+aside footer{
 	width: 100%;
 	height: 75px;
 	display: none;
 	justify-content: center;
+	align-items: center;
 }
-.sidebar .header h1{
+aside header h1{
 	font-size: 48px;
 	font-family: 'Montserrat', sans-serif;
 }
-.separator{
+aside hr{
 	border: 2px solid var(--primary-color);
 	color: var(--primary-color);
 	background-color: var(--primary-color);
@@ -75,10 +67,10 @@ export default {
 	display: none;
 	margin: 10px 0;
 }
-.sidebar.close .header h1{
+aside.close header h1{
 	opacity: 0;
 }
-.sidebar .header .toggle{
+aside header b{
 	background: var(--body-color);
 	transform: rotate(45deg);
 	position: absolute;
@@ -88,10 +80,10 @@ export default {
 	border-radius: 5px;
 	transition: var(--tran-05);
 }
-.sidebar.close .header .toggle{
+aside.close header b{
 	background: var(--sidebar-color);
 }
-.sidebar .icon {
+aside .icon{
 	min-width: 50px;
 	height: 100%;
 	border-radius: 6px;
@@ -100,7 +92,7 @@ export default {
 	justify-content: center;
 	font-size: 20px;
 }
-.sidebar .footer{
+aside footer{
 	position: relative;
 	bottom: 10;
 }

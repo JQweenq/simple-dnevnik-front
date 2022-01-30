@@ -17,36 +17,37 @@ import Sidebar from "./components/Sidebar.vue";
 	flex-direction: row;
 }
 @media (min-width: 768px){
-	.sidebar{
+	aside{
 		width: var(--sidebar-width);
 		height: 100%;
 		padding: 10px 14px;
 		flex-direction: column;
 	}
-	.sidebar.close{
+	aside.close{
 		width: var(--sidebar-close);
 	}
-	.sidebar .item{
-		width: 	100%;
+	aside a{
+		width: 100%;
 	}
-	.sidebar .header,
-	.sidebar .footer{
+	aside header,
+	aside footer{
 		display: flex;
+		
 	}
-	.separator{
+	aside hr{
 		display: block;
 	}
-	.sidebar .nav{
+	aside nav{
 		flex-direction: column;
 		justify-content: initial;
 	}
-	.sidebar .router .text{
+	aside a span{
 		display: inline;
 	}
-	.sidebar .router:hover{
+	aside a:hover{
 		background: var(--router-hover-color);
 	}
-	.sidebar .icon {
+	aside .icon {
 		min-width: 60px;
 		height: 100%;
 		border-radius: 6px;
@@ -62,7 +63,7 @@ import Sidebar from "./components/Sidebar.vue";
 		padding: 0 25px;
 		transition: var(--tran-05);
 	}
-	.sidebar.close ~ section{
+	aside.close ~ section{
 		width: calc(100% - var(--sidebar-close));
 	}
 }

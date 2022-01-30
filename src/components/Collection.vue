@@ -1,13 +1,12 @@
 <template>
-  <nav class="nav">
+  <nav>
     <router-link
       v-for="router in routers"
       :key="router.url"
       :to="router.url"
-      class="item router"
     >
       <i :class="`bx ${router.icon} icon`"></i>
-      <span class="text">{{ router.title }}</span>
+      <span>{{ router.title }}</span>
     </router-link>
   </nav>
 </template>
@@ -28,30 +27,35 @@ export default {
 </script>
 
 <style>
-.sidebar .nav{
+aside nav{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	flex-grow: 1;
 	overflow-y: scroll;
 }
-.sidebar .nav::-webkit-scrollbar{
+aside nav::-webkit-scrollbar{
 	display: none;
 }
-.sidebar .router{
+aside a{
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	border-radius: 10px;
 	background: var(--router-color);
 	color: var(--text-color);
 	text-decoration: none;
 	transition: var(--tran-05);
 }
-.sidebar .router .text{
+aside a span{
 	display: none;
 	white-space: nowrap;
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
 	transition: var(--tran-03);
 }
-.sidebar.close .router .text{
+aside.close a span{
 	opacity: 0;
 }
 </style>

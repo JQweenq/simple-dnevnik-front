@@ -3,7 +3,6 @@
 		<main>
 			<div class="timetable">
 				<table>
-					
 					<tbody>
 						<tr>
 							<th colspan="5">Рассписание</th>
